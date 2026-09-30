@@ -31,7 +31,7 @@ const projectImageMap = {
 const fallbackProjects = selectedProjects.map((projectName) => ({
   title: projectDisplayNames[projectName] || projectName,
   description: "A project focused on clean design, usability, and practical functionality.",
-  tags: ["GitHub", "Portfolio", "Web"],
+  tags: ["GitHub", "Web"],
   url: `https://github.com/${GITHUB_USERNAME}/${projectName}`,
   shortLabel: projectName,
   image: projectImageMap[projectName] || "assets/images/project-default.jpg"
