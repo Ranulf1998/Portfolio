@@ -28,9 +28,18 @@ const projectImageMap = {
   "Web-System": "assets/images/project-6.jpg"
 };
 
+const projectDescriptions = {
+  DEVCONSUI_MoveCodeCamp2026_Level1_Bahian: "A beginner-friendly coding program focused on introducing participants to blockchain development and the Sui ecosystem. It provides hands-on learning in programming, smart contracts, and decentralized applications (dApps) using the Sui blockchain.",
+  "Tough-Athletics-Gym": "A web-based system designed to manage gym memberships, monitor member attendance through QR code check-ins, record walk-in customers, and provide administrators with organized reports and membership information.",
+  "RESQMESH-ADMIN": "A web-based administrative dashboard designed to manage and monitor the ResQMesh communication system. It provides administrators with tools for monitoring users, managing system data, viewing activity, and overseeing online and offline messaging services.",
+  "Student-Management-CRUD-Laravel": "A web-based application developed using Laravel that allows users to create, view, update, and delete student records. It provides a simple and organized way to manage student information through a user-friendly interface.",
+  "library-management": "A web-based application designed to manage books, library members, borrowing, and returning transactions. It helps organize library records and makes it easier to monitor book availability and borrowing activities.",
+  "Web-System": "A cloud-based system designed to help coffee shops manage products, orders, sales, inventory, and customer information. It streamlines daily operations through a centralized and user-friendly platform."
+};
+
 const fallbackProjects = selectedProjects.map((projectName) => ({
   title: projectDisplayNames[projectName] || projectName,
-  description: "A project focused on clean design, usability, and practical functionality.",
+  description: projectDescriptions[projectName] || "A project focused on clean design, usability, and practical functionality.",
   tags: ["GitHub", "Web"],
   url: `https://github.com/${GITHUB_USERNAME}/${projectName}`,
   shortLabel: projectName,
@@ -60,6 +69,7 @@ function normalizeGitHubProject(repo, index) {
     title: projectDisplayNames[repoName] || repoName,
     description:
       repo.description ||
+      projectDescriptions[repoName] ||
       "A project focused on clean design, usability, and practical functionality.",
     tags: [...new Set([repo.language, ...(repo.topics || [])].filter(Boolean))].slice(0, 3),
     url: repo.html_url || `https://github.com/${GITHUB_USERNAME}/${repo.name}`,
