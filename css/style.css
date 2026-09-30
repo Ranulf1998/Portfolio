@@ -511,6 +511,24 @@ img {
   color: var(--muted);
 }
 
+.footer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-copy p,
+.footer-meta p {
+  margin: 0;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
 .socials {
   display: flex;
   gap: 1rem;
